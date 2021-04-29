@@ -21,7 +21,7 @@ public class MysteryBoxController {
     public ResponseEntity<Box> getAllPersons(@PathVariable("pesel") String pesel) {
 
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/person/Query?pesel=" + pesel;
+        String url = "https://afternoon-reaches-44220.herokuapp.com/person/Query?pesel=" + pesel;
         ResponseEntity<Person[]> response = restTemplate.getForEntity(url, Person[].class);
 
         if (response.getStatusCode().equals(HttpStatus.OK)) {
